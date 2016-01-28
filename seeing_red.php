@@ -3,7 +3,7 @@
 Plugin Name: Seeing Red
 Plugin URI: http://www.kjodle.net/wordpress/seeing-red/
 Description: Makes "Screen Options" more noticeable
-Version: 2.0
+Version: 2.1
 Author: Kenneth John Odle
 Author URI: http://techblog.kjodle.net
 Text Domain: seeing-red

@@ -21,3 +21,9 @@ a#contextual-help-link {
 a#contextual-help-link:hover {
 	color: #00138B;
 	}
+
+/* WP 4.4 fix */
+button#contextual-help-link,
+button#show-settings-link {
+    box-shadow: none;
+}
