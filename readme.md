@@ -9,11 +9,11 @@
 * License: GPLv3 or later
 * License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Make your Screen Options and Help tabs more noticeable. 
+Make your Screen Options and Help tabs more noticeable.
 
 ** Description **
 
-This plugin makes your "Screen Options" and "Help" tabs at the top of your screen more noticeable. 
+This plugin makes your "Screen Options" and "Help" tabs at the top of your screen more noticeable.
 
 ** New in version 3.0**
 
@@ -54,6 +54,9 @@ Not with this release, but I will add that if there is interest.
 
 *** 3.0 ***
 *Updated 1 July 2021*
+
+* Added purple color scheme
+* Added "gold" color scheme
 
 *** 2.0 ***
 *Updated 15 July 2015*
