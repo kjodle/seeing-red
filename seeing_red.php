@@ -1,20 +1,20 @@
 <?php
 /*
 Plugin Name: Seeing Red
-Plugin URI: http://www.kjodle.net/wordpress/seeing-red/
+Plugin URI: https://www.kjodle.net/wordpress/
 Description: Makes "Screen Options" more noticeable
-Version: 2.1
+Version: 3.0
 Author: Kenneth John Odle
 Author URI: http://techblog.kjodle.net
 Text Domain: seeing-red
 
-Copyright 2015 Kenneth John Odle
-© 2015 Kenneth John Odle
+Copyright 2021 Kenneth John Odle
+© 2021 Kenneth John Odle
 
 Released under the GPL v.3, http://www.gnu.org/copyleft/gpl.html
 
 	This program is free software; you can redistribute it and/or modify
-	it under the terms of the GNU General Public License, version 3, as 
+	it under the terms of the GNU General Public License, version 3, as
 	published by the Free Software Foundation.
 
 	This program is distributed in the hope that it will be useful,
@@ -82,9 +82,9 @@ function d12sr_options_callback(){
 ?>
 	<div class="wrap">
 	<h2>Seeing Red Options</h2>
-	<p><strong>New!</strong> You now have the option to style the "Screen Options" and "Help" tabs separately.</p>
+	<p><strong></strong> You have the option to style the "Screen Options" and "Help" tabs separately.</p>
 	<p>You can also choose from other color schemes besides red.</p>
-	<form method="post" action="options.php"> 
+	<form method="post" action="options.php">
 	<?php settings_fields( 'd12sr_options_group' ); ?>
 	<?php do_settings_sections( 'd12sr_settings' ); ?>
 	<input name="Submit" type="submit" class="button-primary" value="<?php esc_attr_e(__('Save Options','seeing-red')); ?>" />
@@ -131,7 +131,7 @@ function so_settings_section() {
 // Callback for settings_field for Screen Options tab
 function so_settings_field(){
 	$options = get_option( 'd12sr_options' );
-	$items = array("Red", "Green", "Blue", "Default");
+	$items = array("Red", "Green", "Blue", "Purple", "Default");
 	echo "<select id='d12sr-so' name='d12sr_options[so]'>";
 	foreach($items as $item) {
 		$selected = ($options[so]==$item) ? 'selected="selected"' : '';
@@ -143,7 +143,7 @@ function so_settings_field(){
 // Callback for settings_field for Contextual Help tab
 function ch_settings_field(){
 	$options = get_option( 'd12sr_options' );
-	$items = array("Red", "Green", "Blue", "Default");
+	$items = array("Red", "Green", "Blue", "Purple", "Default");
 	echo "<select id='d12sr-ch' name='d12sr_options[ch]'>";
 	foreach($items as $item) {
 		$selected = ($options[ch]==$item) ? 'selected="selected"' : '';
@@ -154,7 +154,7 @@ function ch_settings_field(){
 
 // Since we are only using drop-downs, we don't need to validate
 function d12sr_options_validate($input) {
-	return $input; 
+	return $input;
 }
 
 
@@ -171,6 +171,9 @@ function d12so_retrieve() {
 		case "Blue" :
 			wp_register_style( 'd12sr_admin_socss', plugins_url('css/soblue.css', __FILE__), false, '1.0.0' );
 			break;
+			case "Purple" :
+				wp_register_style( 'd12sr_admin_socss', plugins_url('css/sopurple.css', __FILE__), false, '1.0.0' );
+				break;
 		default:
 			return;
 	}
@@ -191,6 +194,9 @@ function d12ch_retrieve() {
 			break;
 		case "Blue" :
 			wp_register_style( 'd12sr_admin_chcss', plugins_url('css/chblue.css', __FILE__), false, '1.0.0' );
+			break;
+		case "Purple" :
+			wp_register_style( 'd12sr_admin_chcss', plugins_url('css/chpurple.css', __FILE__), false, '1.0.0' );
 			break;
 		default:
 			return;
