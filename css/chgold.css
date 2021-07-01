@@ -1,0 +1,30 @@
+/* Contextual Help Settings */
+/* BLUE */
+
+#contextual-help-link-wrap,
+#contextual-help-wrap {
+	border-bottom: 1px solid #c58748;
+	border-left: 1px solid #c58748;
+	border-right: 1px solid #c58748;
+	background: #f0d5b9;
+}
+
+#contextual-help-link-wrap { /* Fixes bottom border issue on #contextual-help-wrap */
+	border-top: none;
+	margin-right: 1px;
+	margin-top: -1px;
+	}
+
+a#contextual-help-link {
+	color: #c58748;
+	font-weight: bold;
+	}
+a#contextual-help-link:hover {
+	color: #00138B;
+	}
+
+/* WP 4.4 fix */
+button#contextual-help-link,
+button#show-settings-link {
+    box-shadow: none;
+}

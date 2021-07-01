@@ -131,7 +131,7 @@ function so_settings_section() {
 // Callback for settings_field for Screen Options tab
 function so_settings_field(){
 	$options = get_option( 'd12sr_options' );
-	$items = array("Red", "Green", "Blue", "Purple", "Default");
+	$items = array("Red", "Green", "Blue", "Purple", "Gold", "Default");
 	echo "<select id='d12sr-so' name='d12sr_options[so]'>";
 	foreach($items as $item) {
 		$selected = ($options[so]==$item) ? 'selected="selected"' : '';
@@ -143,7 +143,7 @@ function so_settings_field(){
 // Callback for settings_field for Contextual Help tab
 function ch_settings_field(){
 	$options = get_option( 'd12sr_options' );
-	$items = array("Red", "Green", "Blue", "Purple", "Default");
+	$items = array("Red", "Green", "Blue", "Purple", "Gold", "Default");
 	echo "<select id='d12sr-ch' name='d12sr_options[ch]'>";
 	foreach($items as $item) {
 		$selected = ($options[ch]==$item) ? 'selected="selected"' : '';
@@ -171,9 +171,12 @@ function d12so_retrieve() {
 		case "Blue" :
 			wp_register_style( 'd12sr_admin_socss', plugins_url('css/soblue.css', __FILE__), false, '1.0.0' );
 			break;
-			case "Purple" :
-				wp_register_style( 'd12sr_admin_socss', plugins_url('css/sopurple.css', __FILE__), false, '1.0.0' );
-				break;
+		case "Purple" :
+			wp_register_style( 'd12sr_admin_socss', plugins_url('css/sopurple.css', __FILE__), false, '1.0.0' );
+			break;
+		case "Gold" :
+			wp_register_style( 'd12sr_admin_socss', plugins_url('css/sogold.css', __FILE__), false, '1.0.0' );
+			break;
 		default:
 			return;
 	}
@@ -197,6 +200,9 @@ function d12ch_retrieve() {
 			break;
 		case "Purple" :
 			wp_register_style( 'd12sr_admin_chcss', plugins_url('css/chpurple.css', __FILE__), false, '1.0.0' );
+			break;
+		case "Gold" :
+			wp_register_style( 'd12sr_admin_chcss', plugins_url('css/chgold.css', __FILE__), false, '1.0.0' );
 			break;
 		default:
 			return;
